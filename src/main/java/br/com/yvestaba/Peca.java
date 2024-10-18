@@ -40,6 +40,15 @@ class Deitada1x2 extends Peca{
     }
 }
 
+class DePe2x1 extends Peca{
+    private static final boolean[][] PECA =
+            {{true},
+            {true}};
+    public DePe2x1(){
+        super(PECA);
+    }
+}
+
 class DePe3x1 extends Peca{
     private static final boolean[][] PECA =
             {{true},
@@ -64,6 +73,15 @@ class Z2x3 extends Peca{
     private static final boolean[][] PECA = {{true, true, false},
                                             {false, true, true}};
     public Z2x3(){
+        super(PECA);
+    }
+}
+
+class Z3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, true, false},
+                                            {true, true, false},
+                                            {false, true, true}};
+    public Z3x3(){
         super(PECA);
     }
 }
@@ -102,11 +120,63 @@ class LInvHoriz2x2 extends Peca{
     }
 }
 
+class LInvHorizVertc2x2 extends Peca{
+    private static final boolean[][] PECA = {{true, true},
+                                            {true, false}};
+    public LInvHorizVertc2x2(){
+        super(PECA);
+    }
+}
+
+class LInvHoriz2x3 extends Peca{
+    private static final boolean[][] PECA = {{false, true, true},
+                                            {true, true, true}};
+    public LInvHoriz2x3(){
+        super(PECA);
+    }
+}
+
 class RaioComecaEsquerda3x2 extends Peca{
     private static final boolean[][] PECA = {{true, false},
                                             {true, true},
                                             {false, true}};
     public RaioComecaEsquerda3x2(){
+        super(PECA);
+    }
+}
+
+class O3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, true, true},
+                                            {true, false, true},
+                                            {true, true, true}};
+    public O3x3(){
+        super(PECA);
+    }
+}
+
+class SpaceInvader3x3 extends Peca{
+    private static final boolean[][] PECA = {{false, true, false},
+                                            {true, true, true},
+                                            {true, false, true}};
+    public SpaceInvader3x3(){
+        super(PECA);
+    }
+}
+
+class HDeitado3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, true, true},
+                                            {false, true, false},
+                                            {true, true, true}};
+    public HDeitado3x3(){
+        super(PECA);
+    }
+}
+
+class EscadaComecaDireita3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, false, false},
+                                            {true, true, false},
+                                            {false, true, true}};
+    public EscadaComecaDireita3x3(){
         super(PECA);
     }
 }
