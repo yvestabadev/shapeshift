@@ -77,11 +77,11 @@ class Z2x3 extends Peca{
     }
 }
 
-class Z3x3 extends Peca{
+class ZDefeituoso3x3 extends Peca{
     private static final boolean[][] PECA = {{true, true, false},
                                             {true, true, false},
                                             {false, true, true}};
-    public Z3x3(){
+    public ZDefeituoso3x3(){
         super(PECA);
     }
 }
@@ -164,20 +164,20 @@ class LInvHoriz3x3 extends Peca{
     }
 }
 
-class LInvHorizVertic3x3 extends Peca{
+class LInvVertic3x3 extends Peca{
     private static final boolean[][] PECA = {{true, true, true},
                                             {true, false, false},
                                             {true, false, false}};
-    public LInvHorizVertic3x3(){
+    public LInvVertic3x3(){
         super(PECA);
     }
 }
 
-class LInvHorizVertic3x2 extends Peca{
+class LInvVertic3x2 extends Peca{
     private static final boolean[][] PECA = {{true, true},
                                             {true, false},
                                             {true, false}};
-    public LInvHorizVertic3x2(){
+    public LInvVertic3x2(){
         super(PECA);
     }
 }
@@ -190,10 +190,10 @@ class L2x2 extends Peca{
     }
 }
 
-class LInvHorizVertc2x2 extends Peca{
+class LInvVertc2x2 extends Peca{
     private static final boolean[][] PECA = {{true, true},
                                             {true, false}};
-    public LInvHorizVertc2x2(){
+    public LInvVertc2x2(){
         super(PECA);
     }
 }
@@ -307,6 +307,15 @@ class EscadaComecaDireita3x3 extends Peca{
                                             {true, true, false},
                                             {false, true, true}};
     public EscadaComecaDireita3x3(){
+        super(PECA);
+    }
+}
+
+class EscadaSemChaoDireita3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, true, false},
+                                            {false, true, true},
+                                            {false, false, true}};
+    public EscadaSemChaoDireita3x3(){
         super(PECA);
     }
 }

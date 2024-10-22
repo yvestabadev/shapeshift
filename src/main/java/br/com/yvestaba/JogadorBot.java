@@ -16,20 +16,23 @@ public class JogadorBot {
     }
 
     private static void testarJogo(Tabuleiro tabuleiro, List<MapeadorDePosicao> mapeadores) {
+        boolean ganhou = false;
         Tabuleiro tabuleiroInicial = tabuleiro.clone();
-        for(MapeadorDePosicao mapeador : mapeadores){
-            tabuleiro.jogarPeca(mapeador.getPeca().get(), mapeador.getCoordenadaAtual());
+        while(!ganhou) {
+            for (MapeadorDePosicao mapeador : mapeadores) {
+                tabuleiro.jogarPeca(mapeador.getPeca().get(), mapeador.getCoordenadaAtual());
+            }
+            if (tabuleiro.ganhou()) {
+                return;
+            }
+            var iterator = mapeadores.listIterator();
+            boolean precisaContinuarReorganizando = true;
+            while (precisaContinuarReorganizando) {
+                MapeadorDePosicao mapeador = iterator.next();
+                precisaContinuarReorganizando = mapeador.proximaCoordenada();
+            }
+            tabuleiro = tabuleiroInicial.clone();
         }
-        if(tabuleiro.ganhou()){
-            return;
-        }
-        var iterator = mapeadores.listIterator();
-        boolean precisaContinuarReorganizando = true;
-        while(precisaContinuarReorganizando){
-            MapeadorDePosicao mapeador = iterator.next();
-            precisaContinuarReorganizando = mapeador.proximaCoordenada();
-        }
-        testarJogo(tabuleiroInicial, mapeadores);
     }
 
 
