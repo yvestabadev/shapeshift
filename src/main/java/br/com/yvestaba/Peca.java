@@ -86,6 +86,24 @@ class Z3x3 extends Peca{
     }
 }
 
+class ZPerfeito3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, true, false},
+                                            {false, true, false},
+                                            {false, true, true}};
+    public ZPerfeito3x3(){
+        super(PECA);
+    }
+}
+
+class S3x3 extends Peca{
+    private static final boolean[][] PECA = {{false, true, true},
+                                            {false, true, false},
+                                            {true, true, false}};
+    public S3x3(){
+        super(PECA);
+    }
+}
+
 class T2x3 extends Peca{
     private static final boolean[][] PECA = {{true, true, true},
                                             {false, true, false}};
@@ -103,6 +121,14 @@ class TDireita3x2 extends Peca{
     }
 }
 
+class TBaixo2x3 extends Peca{
+    private static final boolean[][] PECA = {{false, true, false},
+                                            {true, true, true}};
+    public TBaixo2x3(){
+        super(PECA);
+    }
+}
+
 class TEsquerda3x2 extends Peca{
     private static final boolean[][] PECA = {{true, false},
                                             {true, true},
@@ -112,10 +138,54 @@ class TEsquerda3x2 extends Peca{
     }
 }
 
+class TEsquerda3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, false, false},
+                                            {true, true, true},
+                                            {true, false, false}};
+    public TEsquerda3x3(){
+        super(PECA);
+    }
+}
+
 class LInvHoriz2x2 extends Peca{
     private static final boolean[][] PECA = {{false, true},
                                             {true, true}};
     public LInvHoriz2x2(){
+        super(PECA);
+    }
+}
+
+class LInvHoriz3x3 extends Peca{
+    private static final boolean[][] PECA = {{false, false, true},
+                                            {false, false, true},
+                                            {true, true, true}};
+    public LInvHoriz3x3(){
+        super(PECA);
+    }
+}
+
+class LInvHorizVertic3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, true, true},
+                                            {true, false, false},
+                                            {true, false, false}};
+    public LInvHorizVertic3x3(){
+        super(PECA);
+    }
+}
+
+class LInvHorizVertic3x2 extends Peca{
+    private static final boolean[][] PECA = {{true, true},
+                                            {true, false},
+                                            {true, false}};
+    public LInvHorizVertic3x2(){
+        super(PECA);
+    }
+}
+
+class L2x2 extends Peca{
+    private static final boolean[][] PECA = {{true, false},
+                                            {true, true}};
+    public L2x2(){
         super(PECA);
     }
 }
@@ -154,11 +224,71 @@ class O3x3 extends Peca{
     }
 }
 
+class O2x2 extends Peca{
+    private static final boolean[][] PECA = {{true, true},
+                                            {true, true}};
+    public O2x2(){
+        super(PECA);
+    }
+}
+
+class U3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, false, true},
+                                            {true, false, true},
+                                            {true, true, true}};
+    public U3x3(){
+        super(PECA);
+    }
+}
+
+class U2x3 extends Peca{
+    private static final boolean[][] PECA = {{true, false, true},
+                                            {true, true, true}};
+    public U2x3(){
+        super(PECA);
+    }
+}
+
+class UBaixo2x3 extends Peca{
+    private static final boolean[][] PECA = {{true, true, true},
+                                            {true, false, true}};
+    public UBaixo2x3(){
+        super(PECA);
+    }
+}
+
 class SpaceInvader3x3 extends Peca{
     private static final boolean[][] PECA = {{false, true, false},
                                             {true, true, true},
                                             {true, false, true}};
     public SpaceInvader3x3(){
+        super(PECA);
+    }
+}
+
+class SpaceInvaderDireita3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, true, false},
+                                            {false, true, true},
+                                            {true, true, false}};
+    public SpaceInvaderDireita3x3(){
+        super(PECA);
+    }
+}
+
+class SpaceInvaderBaixo3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, false, true},
+                                            {true, true, true},
+                                            {false, true, false}};
+    public SpaceInvaderBaixo3x3(){
+        super(PECA);
+    }
+}
+
+class H3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, false, true},
+                                            {true, true, true},
+                                            {true, false, true}};
+    public H3x3(){
         super(PECA);
     }
 }
@@ -177,6 +307,15 @@ class EscadaComecaDireita3x3 extends Peca{
                                             {true, true, false},
                                             {false, true, true}};
     public EscadaComecaDireita3x3(){
+        super(PECA);
+    }
+}
+
+class EscadaComecaEsquerda3x3 extends Peca{
+    private static final boolean[][] PECA = {{false, false, true},
+                                            {false, true, true},
+                                            {true, true, false}};
+    public EscadaComecaEsquerda3x3(){
         super(PECA);
     }
 }
