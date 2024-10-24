@@ -1,6 +1,6 @@
 package br.com.yvestaba;
 
-public abstract class Peca {
+public abstract class Peca{
     private final boolean[/* y */][/* x */] peca;
 
     public Peca(boolean[][] peca) {
@@ -16,6 +16,18 @@ public abstract class Peca {
     }
     public int getTamanhoY(){
         return peca.length;
+    }
+
+    public Integer getTamanhoPreenchido(){
+        int tamanho = 0;
+        for(int i = 0; i < peca.length; i++){
+            for(int j = 0; j < peca[0].length; j++){
+                if(peca[i][j]){
+                    tamanho++;
+                }
+            }
+        }
+        return tamanho;
     }
 }
 
@@ -95,6 +107,24 @@ class ZPerfeito3x3 extends Peca{
     }
 }
 
+class N3x3 extends Peca{
+    private static final boolean[][] PECA = {{false, false, true},
+                                            {true, true, true},
+                                            {true, false, false}};
+    public N3x3(){
+        super(PECA);
+    }
+}
+
+class NInvHoriz3x3 extends Peca{
+    private static final boolean[][] PECA = {{true, false, false},
+                                            {true, true, true},
+                                            {false, false, true}};
+    public NInvHoriz3x3(){
+        super(PECA);
+    }
+}
+
 class S3x3 extends Peca{
     private static final boolean[][] PECA = {{false, true, true},
                                             {false, true, false},
@@ -151,6 +181,14 @@ class LInvHoriz2x2 extends Peca{
     private static final boolean[][] PECA = {{false, true},
                                             {true, true}};
     public LInvHoriz2x2(){
+        super(PECA);
+    }
+}
+
+class LInvHorizVertic2x2 extends Peca{
+    private static final boolean[][] PECA = {{true, true},
+                                            {false, true}};
+    public LInvHorizVertic2x2(){
         super(PECA);
     }
 }
@@ -241,6 +279,16 @@ class U3x3 extends Peca{
     }
 }
 
+class UDireitaTorta4x4 extends Peca{
+    private static final boolean[][] PECA = {{true, false, false, true},
+                                            {true, false, true, true},
+                                            {true, false, true, false},
+                                            {true, true, true, false}};
+    public UDireitaTorta4x4(){
+        super(PECA);
+    }
+}
+
 class U2x3 extends Peca{
     private static final boolean[][] PECA = {{true, false, true},
                                             {true, true, true}};
@@ -275,6 +323,25 @@ class SpaceInvaderDireita3x3 extends Peca{
     }
 }
 
+class SpaceInvaderEsquerda4x3 extends Peca{
+    private static final boolean[][] PECA = {{false, true, true},
+                                            {true, true, false},
+                                            {false, true, true},
+                                            {false, true, true}};
+    public SpaceInvaderEsquerda4x3(){
+        super(PECA);
+    }
+}
+
+class SpaceInvaderEsquerdaBaixoMaior3x4 extends Peca{
+    private static final boolean[][] PECA = {{false, true, true, false},
+                                            {true, true, false, false},
+                                            {false, true, true, true}};
+    public SpaceInvaderEsquerdaBaixoMaior3x4(){
+        super(PECA);
+    }
+}
+
 class SpaceInvaderBaixo3x3 extends Peca{
     private static final boolean[][] PECA = {{true, false, true},
                                             {true, true, true},
@@ -302,6 +369,15 @@ class HDeitado3x3 extends Peca{
     }
 }
 
+class JBaixo3x3 extends Peca{
+    private static final boolean[][] PECA = {{false, true, true},
+                                            {false, true, false},
+                                            {true, true, true}};
+    public JBaixo3x3(){
+        super(PECA);
+    }
+}
+
 class EscadaComecaDireita3x3 extends Peca{
     private static final boolean[][] PECA = {{true, false, false},
                                             {true, true, false},
@@ -325,6 +401,34 @@ class EscadaComecaEsquerda3x3 extends Peca{
                                             {false, true, true},
                                             {true, true, false}};
     public EscadaComecaEsquerda3x3(){
+        super(PECA);
+    }
+}
+
+class EscadaPreenchEsquerda3x3 extends Peca{
+    private static final boolean[][] PECA = {{false, false, true},
+                                            {false, true, true},
+                                            {true, true, true}};
+    public EscadaPreenchEsquerda3x3(){
+        super(PECA);
+    }
+}
+
+class Cruz3x3 extends Peca{
+    private static final boolean[][] PECA = {{false, true, false},
+                                            {true, true, true},
+                                            {false, true, false}};
+    public Cruz3x3(){
+        super(PECA);
+    }
+}
+
+class ZL4x5 extends Peca{
+    private static final boolean[][] PECA = {{true, true, false, false, false},
+                                            {false, true, true, true, false},
+                                            {false, false, true, false, false},
+                                            {false, false, true, true, true}};
+    public ZL4x5(){
         super(PECA);
     }
 }

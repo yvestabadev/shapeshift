@@ -1,6 +1,7 @@
 package br.com.yvestaba;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class JogadorBot {
 
@@ -16,16 +17,17 @@ public class JogadorBot {
     }
 
     private static void testarJogo(Tabuleiro tabuleiro, List<MapeadorDePosicao> mapeadores) {
-        boolean ganhou = false;
         Tabuleiro tabuleiroInicial = tabuleiro.clone();
-        while(!ganhou) {
-            for (MapeadorDePosicao mapeador : mapeadores) {
-                tabuleiro.jogarPeca(mapeador.getPeca().get(), mapeador.getCoordenadaAtual());
-            }
+        List<MapeadorDePosicao> mapeadoresOrganizados = mapeadores.stream().sorted().collect(Collectors.toList());
+        int indexLast = mapeadoresOrganizados.size() - 1;
+        var ultimoMapeamento = mapeadoresOrganizados.get(indexLast);
+        mapeadoresOrganizados.remove(mapeadoresOrganizados.remove(indexLast));
+        while(true) {
+            ManipuladorTabuleiro.tentarGanhar(tabuleiro, mapeadoresOrganizados, ultimoMapeamento);
             if (tabuleiro.ganhou()) {
                 return;
             }
-            var iterator = mapeadores.listIterator();
+            var iterator = mapeadoresOrganizados.iterator();
             boolean precisaContinuarReorganizando = true;
             while (precisaContinuarReorganizando) {
                 MapeadorDePosicao mapeador = iterator.next();

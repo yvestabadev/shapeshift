@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Verifica todas as possibilidades de uma peça dentro do tabuleiro e guarda a coordenada atual que estamos testando
  */
-public class MapeadorDePosicao {
+public class MapeadorDePosicao implements Comparable{
 
     private final Peca peca;
     private final int limiteX;
@@ -54,5 +54,15 @@ public class MapeadorDePosicao {
 
     public Coordenada getCoordenadaAtual() {
         return coordenadaAtual;
+    }
+
+    public void setCoordenadaAtual(Coordenada coordenadaAtual) {
+        this.coordenadaAtual = coordenadaAtual;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        MapeadorDePosicao other = (MapeadorDePosicao) o;
+        return other.getPeca().getTamanhoPreenchido().compareTo(this.getPeca().getTamanhoPreenchido());
     }
 }

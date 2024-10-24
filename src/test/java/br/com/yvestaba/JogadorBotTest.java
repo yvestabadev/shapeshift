@@ -369,4 +369,80 @@ class JogadorBotTest {
 
         JogadorBot.acharSolucao(tabuleiro, pecas);
     }
+
+    @Test
+    void fase27(){
+        int[][] matriz =
+                {{0,2,1,1},
+                {2,2,1,2},
+                {1,0,1,2},
+                {1,0,0,0}};
+        Tabuleiro tabuleiro = new Tabuleiro(matriz, 3);
+        List<Peca> pecas = Arrays.asList(new O2x2(), new TBaixo2x3(), new SpaceInvaderDireita3x3(), new N3x3(), new LInvVertc2x2(),
+                new JBaixo3x3(), new LInvHoriz3x3(), new L2x2(), new ZDefeituoso3x3(), new ZDefeituoso3x3(), new Sozinha(), new Sozinha());
+
+        JogadorBot.acharSolucao(tabuleiro, pecas);
+    }
+
+    @Test
+    void fase28(){
+        int[][] matriz =
+                {{0,0,1,2},
+                {2,1,0,1},
+                {1,2,2,2},
+                {1,1,1,2}};
+        Tabuleiro tabuleiro = new Tabuleiro(matriz, 3);
+        List<Peca> pecas = Arrays.asList(new RaioComecaEsquerda3x2(), new TEsquerda3x2(), new DePe3x1(), new JBaixo3x3(), new Deitada1x3(),
+                new EscadaComecaDireita3x3(), new TEsquerda3x3(), new EscadaSemChaoDireita3x3(), new TBaixo2x3(), new HDeitado3x3(),
+                new NInvHoriz3x3(), new H3x3(), new TDireita3x2());
+
+        JogadorBot.acharSolucao(tabuleiro, pecas);
+    }
+
+    @Test
+    void fase29(){
+        int[][] matriz =
+                {{0,0,2,2},
+                {1,1,2,2},
+                {2,1,0,1},
+                {0,0,1,2}};
+        Tabuleiro tabuleiro = new Tabuleiro(matriz, 3);
+        List<Peca> pecas = Arrays.asList(new N3x3(), new TEsquerda3x2(), new UBaixo2x3(), new U3x3(), new SpaceInvaderDireita3x3(),
+                new DePe2x1(), new DePe2x1(), new LInvHorizVertic2x2(), new Deitada1x3(), new Sozinha(), new EscadaSemChaoDireita3x3(),
+                new UBaixo2x3(), new H3x3(), new L2x2());
+
+        JogadorBot.acharSolucao(tabuleiro, pecas);
+    }
+
+    @Test
+    void fase30(){
+        int[][] matriz =
+                {{0,1,1,1},
+                {2,2,2,1},
+                {2,1,0,1},
+                {2,0,0,2}};
+        Tabuleiro tabuleiro = new Tabuleiro(matriz, 3);
+        List<Peca> pecas = Arrays.asList(new Deitada1x2(), new EscadaPreenchEsquerda3x3(), new Deitada1x2(), new Sozinha(), new EscadaComecaEsquerda3x3(),
+                new HDeitado3x3(), new Z2x3(), new Z2x3(), new DePe3x1(), new JBaixo3x3(), new Deitada1x3(), new Deitada1x3(),
+                new O3x3(), new RaioComecaEsquerda3x2(), new U2x3());
+
+        JogadorBot.acharSolucao(tabuleiro, pecas);
+    }
+
+    @Test
+    void fase31(){
+        int[][] matriz =
+                {{0,1,0,1,1,0},
+                {0,1,0,0,1,0},
+                {0,1,1,0,1,1},
+                {1,1,0,0,1,0},
+                {1,1,0,1,1,1},
+                {0,0,0,1,1,1}};
+        Tabuleiro tabuleiro = new Tabuleiro(matriz, 2);
+        List<Peca> pecas = Arrays.asList(new Deitada1x3(), new Cruz3x3(), new ZL4x5(), new DePe3x1(), new SpaceInvaderDireita3x3(),
+                new UDireitaTorta4x4(), new SpaceInvaderEsquerda4x3(), new SpaceInvaderDireita3x3(), new SpaceInvaderEsquerdaBaixoMaior3x4(),
+                new Sozinha(), new EscadaSemChaoDireita3x3(), new ZL4x5());
+
+        JogadorBot.acharSolucao(tabuleiro, pecas);
+    }
 }
