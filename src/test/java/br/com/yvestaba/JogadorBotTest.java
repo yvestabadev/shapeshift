@@ -445,4 +445,37 @@ class JogadorBotTest {
 
         JogadorBot.acharSolucao(tabuleiro, pecas);
     }
+    @Test
+    void fase32(){
+        int[][] matriz =
+                        {{0,0,0,0,1,0},
+                        {1,0,1,0,1,0},
+                        {1,0,1,0,1,1},
+                        {0,0,1,1,0,1},
+                        {0,1,0,0,1,0},
+                        {1,1,0,0,0,0}};
+        Tabuleiro tabuleiro = new Tabuleiro(matriz, 2);
+        List<Peca> pecas = Arrays.asList(new CRaio3x4(), new ZL4x5(), new LTInvHoriz5x5(), new NInvHoriz3x3(), new LInvHoriz3x3(),
+                new UBaixo2x3(), new ZW5x5(), new SpaceInvaderEstacionadoEsq3x4(), new DePe3x1(), new LTInvHoriz5x5(), new CInvHoriz3x2(),
+                new SpaceInvader4x3(), new LInvVertic3x3());
+
+        JogadorBot.acharSolucao(tabuleiro, pecas);
+    }
+
+    @Test
+    void fase33(){
+        int[][] matriz =
+                        {{1,0,0,1,0,0},
+                        {0,0,1,1,0,0},
+                        {0,1,1,1,0,1},
+                        {1,1,0,0,1,0},
+                        {1,0,1,1,0,0},
+                        {0,0,0,0,0,0}};
+        Tabuleiro tabuleiro = new Tabuleiro(matriz, 2);
+        List<Peca> pecas = Arrays.asList(new O3x3(), new LInvVertic3x2(), new DePe3x2(), new SpaceInvaderEstacionadoEsq3x4(),
+                new Deitada1x3(), new UDireitaTorta4x4(), new LInvHoriz2x3(), new EscadaSemChaoDireita3x3(), new NInvHoriz3x3(),
+                new LInvHorizVertic2x2(), new LInvVertic3x4(), new SpaceInvader4x3(), new O3x4(), new CasseteteJ4x5());
+
+        JogadorBot.acharSolucao(tabuleiro, pecas);
+    }
 }

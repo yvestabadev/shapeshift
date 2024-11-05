@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Verifica todas as possibilidades de uma peça dentro do tabuleiro e guarda a coordenada atual que estamos testando
  */
-public class MapeadorDePosicao implements Comparable{
+public class MapeadorDePosicao implements Comparable<MapeadorDePosicao>{
 
     private final Peca peca;
     private final int limiteX;
@@ -61,8 +61,7 @@ public class MapeadorDePosicao implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        MapeadorDePosicao other = (MapeadorDePosicao) o;
+    public int compareTo(MapeadorDePosicao other) {
         return other.getPeca().getTamanhoPreenchido().compareTo(this.getPeca().getTamanhoPreenchido());
     }
 }

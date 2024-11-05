@@ -1,13 +1,29 @@
 package br.com.yvestaba;
 
 import java.util.List;
-import java.util.SortedSet;
 
-public class ManipuladorTabuleiro {
-    public static void tentarGanhar(Tabuleiro tabuleiro, List<MapeadorDePosicao> mapeadoresOrganizados, MapeadorDePosicao ultimoMapeamento) {
-        for(var mapeador : mapeadoresOrganizados){
-            tabuleiro.jogarPeca(mapeador.getPeca().get(), mapeador.getCoordenadaAtual());
+public abstract class ManipuladorTabuleiro {
+
+    protected Tabuleiro tabuleiro;
+
+    private Tabuleiro tabuleiroInicial;
+    protected MapeadorDePosicao ultimoMapeamento;
+
+    protected ManipuladorTabuleiro(Tabuleiro tabuleiroInicial){
+        this.tabuleiroInicial = tabuleiroInicial;
+    }
+
+
+    static ManipuladorTabuleiro getStrategy(Tabuleiro tabuleiro, List<MapeadorDePosicao> mapeadoresOrganizados){
+        if(tabuleiro.getTamanhoX() * tabuleiro.getTamanhoY() < 16){
+            return new ManipuladorTabuleiroMenor(tabuleiro, mapeadoresOrganizados);
         }
+        return new ManipuladorTabuleiroMaior(tabuleiro, mapeadoresOrganizados);
+    }
+
+    public abstract void jogar();
+
+    protected void jogarUltimaPeca() {
         for(int y = 0; y < tabuleiro.getTamanhoY(); y++){
             for(int x = 0; x < tabuleiro.getTamanhoX(); x++){
                 if(tabuleiro.getPecaCoordenada(y, x) != 0){
@@ -37,4 +53,13 @@ public class ManipuladorTabuleiro {
         }
         return new Coordenada(largura, y);
     }
+
+    public void reiniciarTabuleiro() {
+        tabuleiro = tabuleiroInicial.clone();
+    }
+
+    public boolean ganhou(){
+        return tabuleiro.ganhou();
+    }
+
 }

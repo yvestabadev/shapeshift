@@ -52,4 +52,27 @@ public class Tabuleiro implements Cloneable{
     public int getPecaCoordenada(int y, int x){
         return matriz[y][x];
     }
+
+    public int getMetadeTabuleiro(){
+        return getTamanhoY() * getTamanhoX() / 3 * getMutiplicadorPorQtdePeca();
+    }
+
+    private int getMutiplicadorPorQtdePeca() {
+        if(qtdeTipoPeca < 4){
+            return qtdeTipoPeca - 1;
+        }
+        return qtdeTipoPeca / 2;
+    }
+
+    public int getMudancasRestantes() {
+        int mudancasRestantes = 0;
+        for(int i = 0; i < matriz.length; i++){
+            for(int j = 0; j < matriz[0].length; j++){
+                if(matriz[i][j] != 0){
+                    mudancasRestantes += (qtdeTipoPeca - matriz[i][j]);
+                }
+            }
+        }
+        return mudancasRestantes;
+    }
 }
