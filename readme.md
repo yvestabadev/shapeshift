@@ -10,3 +10,8 @@ Testes unitários no PC Acer Nitro AN515-44
 1.1 - A peça menor fica por último e sua posição é selecionada pelo sistema ao invés de testar um por um
 ![img_2.png](img_2.png)
 ![img_1.png](img_1.png)
+
+1.2 - Divide o jogo em 3 pilhas de peças, as maiores, a menor de todas e as restantes. Depois das maiores, verifica se
+a quantidade de mudanças disponíveis batem com a quantidade de mudanças que realmente podem ser feitas e decide se continua
+tentando com a combinação ou não.
+![img_3.png](img_3.png)

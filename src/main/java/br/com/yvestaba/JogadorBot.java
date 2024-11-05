@@ -19,12 +19,10 @@ public class JogadorBot {
     private static void testarJogo(Tabuleiro tabuleiro, List<MapeadorDePosicao> mapeadores) {
         Tabuleiro tabuleiroInicial = tabuleiro.clone();
         List<MapeadorDePosicao> mapeadoresOrganizados = mapeadores.stream().sorted().collect(Collectors.toList());
-        int indexLast = mapeadoresOrganizados.size() - 1;
-        var ultimoMapeamento = mapeadoresOrganizados.get(indexLast);
-        mapeadoresOrganizados.remove(mapeadoresOrganizados.remove(indexLast));
+        ManipuladorTabuleiro manipuladorTabuleiro = ManipuladorTabuleiro.getStrategy(tabuleiro, mapeadoresOrganizados);
         while(true) {
-            ManipuladorTabuleiro.tentarGanhar(tabuleiro, mapeadoresOrganizados, ultimoMapeamento);
-            if (tabuleiro.ganhou()) {
+            manipuladorTabuleiro.jogar();
+            if (manipuladorTabuleiro.ganhou()) {
                 return;
             }
             var iterator = mapeadoresOrganizados.iterator();
@@ -33,7 +31,7 @@ public class JogadorBot {
                 MapeadorDePosicao mapeador = iterator.next();
                 precisaContinuarReorganizando = mapeador.proximaCoordenada();
             }
-            tabuleiro = tabuleiroInicial.clone();
+            manipuladorTabuleiro.reiniciarTabuleiro();
         }
     }
 
